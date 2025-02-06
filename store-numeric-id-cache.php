@@ -44,6 +44,19 @@ function check_local_some_data($id)
  * Also check what ID numbers you (will) have and plan this accordingly. On Linux "debugfs" is your friend to determine 
  * maximum directory size. 
  * 
+ * 2 have multiple levels, here is a quick test. You can also iterate is nicer, but this will take care of pretty numbers 
+ * as it is, without causing file system problems (on Linux)
+ * 
+ * for($x=0; $x<100; $x++){
+ *   $randnum = rand(1,9999999999999);
+ *   $a = intdiv($randnum,10000000);
+ *   $b = intdiv($randnum,10000)-1000*$a;
+ *   echo "/$a/$b/$randnum";
+ *   echo "\n";
+ *  }
+ * 
+ * 
+ * 
  * @param mixed $some_ctid
  * 
  * @return [type]
